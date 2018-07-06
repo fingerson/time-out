@@ -1,0 +1,59 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
+[ext_resource path="res://Graphics/Sprites/Tank.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/Turret.gd" type="Script" id=3]
+[ext_resource path="res://Graphics/Sprites/GunTurret.png" type="Texture" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 45.7066, 42.6423 )
+
+[node name="Player" type="KinematicBody2D"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+script = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
+
+shape = SubResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Tank" type="Sprite" parent="." index="1"]
+
+rotation = 3.14159
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Offset", "Transform" ]
+
+[node name="Turret" type="Position2D" parent="." index="2"]
+
+script = ExtResource( 3 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="GunTurret" type="Sprite" parent="Turret" index="0"]
+
+position = Vector2( 0, -18 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Offset", "Transform" ]
+
+[node name="Bullet_pos" type="Position2D" parent="Turret" index="1"]
+
+position = Vector2( 0, -50 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Move" type="Position2D" parent="." index="3"]
+
+position = Vector2( 0, -1 )
+_sections_unfolded = [ "Transform" ]
+
+
