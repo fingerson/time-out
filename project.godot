@@ -14,8 +14,13 @@ config/name="time_loss"
 run/main_scene="res://Scenes/Main.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+misc_funcs="*res://Scripts/misc_funcs.gd"
+
 [display]
 
+window/size/height=576
 window/stretch/mode="viewport"
 
 [input]

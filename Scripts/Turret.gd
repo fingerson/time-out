@@ -14,6 +14,7 @@ func _ready():
 	
 func fire():
 	var bullet = BULLET.instance()
+	bullet.parent_name = get_parent().get_name()
 	bullet.rotation = get_global_transform_with_canvas().get_rotation()
 	bullet.global_position = $Bullet_pos.global_position
 	bullet.speed = ($Bullet_pos.global_position-global_position).normalized()

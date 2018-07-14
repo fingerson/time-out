@@ -1,8 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scripts/Bullet.gd" type="Script" id=1]
-[ext_resource path="res://Graphics/Sprites/Bullet.png" type="Texture" id=2]
-
+[ext_resource path="res://Graphics/Sprites/Tank/Bullet.png" type="Texture" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
 
@@ -20,7 +19,7 @@ gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
 linear_damp = 0.1
 angular_damp = 1.0
-collision_layer = 2
+collision_layer = 7
 audio_bus_override = false
 audio_bus_name = "Master"
 _sections_unfolded = [ "Collision" ]

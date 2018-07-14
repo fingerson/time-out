@@ -7,10 +7,7 @@ path="res://.import/Title.png-5f58cb1465491d168f1004f7075e4ff8.stex"
 [deps]
 
 source_file="res://Graphics/UI/Title.png"
-source_md5="b4442dca43b781881c0f3b531b821d51"
-
 dest_files=[ "res://.import/Title.png-5f58cb1465491d168f1004f7075e4ff8.stex" ]
-dest_md5="30cea20efcff16de640dec9a86e3a35b"
 
 [params]
 

@@ -1,0 +1,65 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scripts/Helicopter.gd" type="Script" id=1]
+[ext_resource path="res://Graphics/Sprites/Helicopter/helianim.png" type="Texture" id=2]
+
+[sub_resource type="Animation" id=1]
+
+resource_name = "transition"
+length = 0.2
+loop = true
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.1, 0.15 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
+
+[node name="Helicopter" type="KinematicBody2D"]
+
+position = Vector2( 585.36, 128.406 )
+input_pickable = false
+collision_layer = 2
+collision_mask = 2
+collision/safe_margin = 0.08
+script = ExtResource( 1 )
+_sections_unfolded = [ "Collision", "Transform" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="0"]
+
+position = Vector2( -18, 0 )
+rotation = 1.5708
+build_mode = 0
+polygon = PoolVector2Array( -2.37229, -60.9955, 1.91321, -60.8152, 10.4775, -59.1488, 10.9392, -70.1519, 12.9397, -71.6139, 14.9403, -69.9211, 15.2481, -52.3007, 19.3906, -42.5434, 21.7739, -19.1078, 18.5962, 4.32779, 15.4042, 11.5711, 14.7429, 40.5727, 10.8698, 37.1719, 10.8698, 23.2851, 6.42976, 23.7574, 5.88535, 70.6624, 14.624, 69.868, 15.8157, 74.6346, 6.67978, 73.8401, 1.11879, 82.976, -6.03105, 75.0318, -15.5642, 72.6485, -14.3725, 68.6764, -6.82549, 68.2792, -6.89023, 23.3796, -11.0468, 23.474, -11.4247, 37.4553, -14.7311, 40.0059, -15.2486, 12.0883, -16.9983, 8.35914, -21.9196, -17.1217, -19.9335, -41.3517, -15.2221, -53.0702, -14.7604, -70.3058, -13.1446, -71.6139, -10.9132, -70.3058, -10.5284, -59.4566 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Sprite" type="Sprite" parent="." index="1"]
+
+position = Vector2( -18, 3.5 )
+rotation = 1.5708
+texture = ExtResource( 2 )
+vframes = 2
+hframes = 2
+_sections_unfolded = [ "Animation", "Transform" ]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="2"]
+
+root_node = NodePath("..")
+autoplay = ""
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/transition = SubResource( 1 )
+blend_times = [  ]
+
+

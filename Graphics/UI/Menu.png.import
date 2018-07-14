@@ -7,10 +7,7 @@ path="res://.import/Menu.png-ab0b9510f5f60cb866cfec72ffb89ff9.stex"
 [deps]
 
 source_file="res://Graphics/UI/Menu.png"
-source_md5="cf7468e8c9d3b494cb94110f8f22b2ad"
-
 dest_files=[ "res://.import/Menu.png-ab0b9510f5f60cb866cfec72ffb89ff9.stex" ]
-dest_md5="9f805764598877eab0f357d6e820bfd0"
 
 [params]
 

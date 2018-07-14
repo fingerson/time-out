@@ -7,13 +7,14 @@ const SPAN = 5
 const SPEEDVAL = 250
 var speed = Vector2(0,0)
 onready var time = 0
+var parent_name
 
 func _ready():
 	$Area2D.connect("body_entered",self,"_on_body_entered")
 	pass
 
 func _on_body_entered(body):
-	if not body.is_in_group("Player"):
+	if not body.get_name() == parent_name:
 		queue_free()
 	pass
 
