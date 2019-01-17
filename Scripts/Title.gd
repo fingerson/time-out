@@ -3,8 +3,7 @@ extends Node2D
 # class member variables go here, for example:
 # var a = 2
 # var b = "textvar"
-
-signal out_mode(mode)
+var new_game = preload("res://Scenes/test_level.tscn")
 
 func _ready():
 	$New_game.connect("button_down",self,"on_ng")
@@ -12,10 +11,10 @@ func _ready():
 	pass
 
 func on_ng():
-	emit_signal("out_mode","ng")
+	get_tree().change_scene_to(new_game)
 	
 func on_quit():
-	emit_signal("out_mode","quit")
+	get_tree().quit()
 #func _process(delta):
 #	# Called every frame. Delta is time since last frame.
 #	# Update game logic here.

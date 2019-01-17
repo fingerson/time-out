@@ -3,8 +3,9 @@ extends Node2D
 # class member variables go here, for example:
 # var a = 2
 # var b = "textvar"
+var damage = 5
 const SPAN = 5
-const SPEEDVAL = 250
+const SPEEDVAL = 600
 var speed = Vector2(0,0)
 onready var time = 0
 var parent_name
@@ -15,6 +16,8 @@ func _ready():
 
 func _on_body_entered(body):
 	if not body.get_name() == parent_name:
+		if body.has_method("take_damage"):
+			body.take_damage(damage)
 		queue_free()
 	pass
 
